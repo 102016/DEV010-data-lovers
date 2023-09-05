@@ -13,8 +13,6 @@
 * [7. Objetivos de aprendizaje](#7-objectivos-de-aprendizaje)
 * [8. Checklist](#8-checklist)
 
-*
-
 ## 1. Introducción
 
 Según [Pokemon Wiki](https://pokemon.fandom.com/es/wiki/Generaciones_Pok%C3%A9mon)
