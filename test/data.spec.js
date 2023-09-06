@@ -12,11 +12,11 @@ import {
 } from "../src/data";
 // PRIMER TEST NOMBRE ASCEDENTE
 describe('sortPokemonsByNameAscending', () => {
-  it('is a function', () => {
+  test('is a function', () => {
     expect(typeof sortPokemonsByNameAscending).toBe('function');
   });
 
-  it('returns an array of Pokemon sorted by name in ascending order', () => {
+  test('returns an array of Pokemon sorted by name in ascending order', () => {
     const unsortedPokemons = [
       { name: "Charmander" },
       { name: "Bulbasaur" },
