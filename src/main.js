@@ -10,7 +10,7 @@ import {
   calculateAverageAttack,
   
 } from "./data.js";
-
+//import * (all) as F from data.js 
 import pokemonData from "./data/pokemon/pokemon.js";
 
 // Obtiene los datos de los pokémones
@@ -60,13 +60,14 @@ function showPokemons(selectedType, nameFilter, sortedPokemons, sortedPokemons2,
     filteredPokemons = filterPokemonsByName(filteredPokemons, nameFilter);
   }
   
-  if (selectedType !== "") {
+  if (selectedType !== "") { //si el filtro de tipo SI eligio un tipo
     // Filtrar por tipo si se selecciona un tipo
     filteredPokemons = filterPokemonsByType(filteredPokemons, selectedType);
 
     // Calcular el promedio de ataque de los pokémones filtrados por tipo
     const averageAttack = calculateAverageAttack(filteredPokemons);
-    averageAttackElement.textContent = `Average Attack: ${averageAttack.toFixed(2)}`;
+    //.textContent nos devuelve el contenido de texto de un elemento HTML. Es útil para obtener (o modificar) sólo el texto dentro de un elemento
+    averageAttackElement.textContent = `Average Attack: ${averageAttack.toFixed(2)}`; //toFiex(2) para solo 2 decimales al calcular el promedio
   } else {
     averageAttackElement.textContent = "Average Attack: "; 
   }
@@ -101,7 +102,7 @@ const ascendNumberButton = document.getElementById("ascend-number-button");
 
 
 // Agrega un evento para detectar cambios en la selección de tipos
-typeSelect.addEventListener("change", (event) => {
+typeSelect.addEventListener("change", (event) => { //change se activa cuando el elemento finaliza un cambio
   const selectedType = event.target.value;
   const nameFilter = nameInput.value;
   const sortedPokemons = sortPokemonsByNameAscending(pokemons);
@@ -139,8 +140,8 @@ descendButton.addEventListener("click", () => {
 });
 // Agregar evento para el botón "Ascendente" por número
 ascendNumberButton.addEventListener("click", () => {
-  const selectedType = typeSelect.value;
-  const nameFilter = nameInput.value;
+  const selectedType = typeSelect.value; 
+  const nameFilter = nameInput.value; 
   const sortedPokemons = false; // Establecer orden ascendente por nombre a falso
   const sortedPokemons2 = false; // Establecer orden descendente por nombre a falso
   const sortedPokemonsByNumber = true; // Establecer orden ascendente por número

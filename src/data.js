@@ -16,18 +16,20 @@ function generateResistantList(resistantTypes) {
 
 function generateWeaknessesList(weaknessesTypes) {
   return weaknessesTypes.join(', ');
+} //extraer debilidad del objeto
 
-  //extraer debilidad del objeto
-} 
 function sortPokemonsByNameAscending(pokemons) {
-  return pokemons.slice().sort((a, b) => a.name.localeCompare(b.name));
+  return pokemons.slice().sort((a, b) => a.name.localeCompare(b.name)); //ordena con short de A-Z
 } 
-function sortPokemonsByNameDescending(pokemons) {
-  return pokemons.slice().sort((a, b) => a.name.localeCompare(b.name)).reverse();
-}
-function sortPokemonsByNumberAscending(pokemons) {
+
+function sortPokemonsByNameDescending(pokemons) { 
+  return pokemons.slice().sort((a, b) => a.name.localeCompare(b.name)).reverse(); // Ordena con short A-Z y con reverse lo cambia de Z-A
+} //return pokemons.reverse();
+
+function sortPokemonsByNumberAscending(pokemons) { //parseInt() función analiza una cadena y devuelve un entero
   return pokemons.slice().sort((a, b) => parseInt(a.num) - parseInt(b.num));
 }
+
 function calculateAverageAttack(pokemons) {
   const totalAttack = pokemons.reduce((sum, pokemon) => sum + parseInt(pokemon.stats["base-attack"]), 0);
   return totalAttack / pokemons.length;
@@ -45,4 +47,4 @@ export {
   calculateAverageAttack,
 } 
 
-
+//poner export a cada funcion 
